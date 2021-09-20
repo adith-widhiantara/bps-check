@@ -34,6 +34,8 @@ class PemindahBukuanController extends Controller
 
     public function upload(Request $request)
     {
+        PemindahBukuan::truncate();
+
         Excel::import(new PemindahBukuansImport, $request->bps);
 
         return redirect()
