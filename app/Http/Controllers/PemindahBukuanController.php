@@ -20,12 +20,16 @@ class PemindahBukuanController extends Controller
 
     public function find(Request $request)
     {
-        $bps = PemindahBukuan::query()
-            ->where('nomor', $request->bps)
-            ->first();
+        try {
+            $bps = PemindahBukuan::query()
+                ->where('nomor', $request->bps)
+                ->firstOrFail();
 
-        return redirect()
-            ->route('detail', $bps->id);
+            return redirect()
+                ->route('detail', $bps->id);
+        } catch (\Throwable $th) {
+            return back();
+        }
     }
 
     public function upload(Request $request)

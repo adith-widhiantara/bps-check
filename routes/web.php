@@ -18,7 +18,7 @@ Route::get('/', [PemindahBukuanController::class, 'welcome'])->name('welcome');
 
 Route::post('find', [PemindahBukuanController::class, 'find'])->name('find.bps');
 
-Route::post('/', [PemindahBukuanController::class, 'upload']);
+Route::post('/', [PemindahBukuanController::class, 'upload'])->name('upload.data');
 
 Route::get('all', [PemindahBukuanController::class, 'all'])->name('all');
 
