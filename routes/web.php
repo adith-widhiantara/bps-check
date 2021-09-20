@@ -22,4 +22,6 @@ Route::post('/', [PemindahBukuanController::class, 'upload'])->name('upload.data
 
 Route::get('all', [PemindahBukuanController::class, 'all'])->name('all');
 
+Route::post('all', [PemindahBukuanController::class, 'passwordAll'])->name('password.all');
+
 Route::get('{pemindahBukuan}', [PemindahBukuanController::class, 'detail'])->name('detail');
