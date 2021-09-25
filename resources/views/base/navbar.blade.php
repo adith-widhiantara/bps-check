@@ -61,6 +61,12 @@
                                 <label for="formFile" class="form-label">BPS Excel File</label>
                                 <input class="form-control" type="file" id="formFile" name="bps" required>
                             </div>
+
+                            <div class="mb-3">
+                                <p>
+                                    Click <a href="{{ asset('Format.xlsx') }}">here</a> to download file format BPS Excel File
+                                </p>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

@@ -35,15 +35,14 @@ class PemindahBukuanController extends Controller
     {
         if ($request->password != 'password') {
             return redirect()
-                ->route('welcome');
+                ->route('welcome')
+                ->with('error', 'Wrong Password!');
         }
-
-        PemindahBukuan::truncate();
 
         Excel::import(new PemindahBukuansImport, $request->bps);
 
         return redirect()
-            ->route('welcome')
+            ->back()
             ->with('success', 'Upload data successfully');
     }
 
@@ -56,7 +55,8 @@ class PemindahBukuanController extends Controller
     {
         if ($request->password != 'password') {
             return redirect()
-                ->route('welcome');
+                ->route('welcome')
+                ->with('error', 'Wrong Password!');
         }
 
         return redirect()
